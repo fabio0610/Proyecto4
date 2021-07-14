@@ -80,15 +80,15 @@ def modulador(bits, fc, mpp):
     # 3. Inicializar la señal modulada s(t)
     t_simulacion = np.linspace(0, N * Tc, N * mpp)
     senal = np.zeros(t_simulacion.shape)
-    moduladora_a = np.zeros(t_simulacion.shape)  # señal de informació
+    moduladora_a = np.zeros(t_simulacion.shape)  # señal de información
     moduladora_b = np.zeros(t_simulacion.shape)
-    moduladora_c = np.zeros(t_simulacion.shape)  # señal de informació
+    moduladora_c = np.zeros(t_simulacion.shape)  # señal de información
     moduladora_d = np.zeros(t_simulacion.shape)
 
 
     # 4. Asignar las formas de onda según los bits
     i = 0
-    # Se utilizan 4 if para separar el bitstream en dos ondas portadoras
+    # Se utilizan 8 if para separar el bitstream en dos ondas portadoras
     for simbolo1, simbolo2,simbolo3,simbolo4 in simbolos:
         if simbolo1 == 0 and simbolo2 == 0:
             senal[i * mpp: (i + 2) * mpp] = portadora_I * -3
